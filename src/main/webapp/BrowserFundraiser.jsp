@@ -3,6 +3,7 @@
 
 <%@ page import="java.util.*"%>
 <%@ page import="com.fssa.sharetorise.model.FundRaiser"%>
+<%@ page import="com.fssa.sharetorise.model.User"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,15 +27,15 @@
 			src="../../assets/images/index_images/logo_main.png" alt="logo"></a>
 		<nav>
 			<ul class="nav__links">
-				<li><a href="../../index.html">Home</a></li>
+				<li><a href="./index.jsp">Home</a></li>
 				<li><a href="#">About</a></li>
-				<li><a href="#">Fundraiser</a></li>
+				<li><li><a href="./FundraiserServlet">Fundraiser List</a></li>
+
+
 
 			</ul>
 		</nav>
-		<a class="cta" href="../login and register/register.html"
-			id="register">Register</a> <a class="cta"
-			href="../login and register/login.html" id="login">Login</a>
+		
 
 	</header>
 
@@ -79,7 +80,9 @@
 
 
 
-			<button id="btn">Start a fund raiser</button>
+			<button id="btn">
+				<a href="./AddFundraiser.jsp">Start a fund raiser</a>
+			</button>
 		</div>
 
 		<div class="card-fundraisers">
@@ -116,72 +119,75 @@
 
 
 
-					<%
-					List<FundRaiser> allFund = (List<FundRaiser>) request.getAttribute("FundraiserList");
+				<%
+				List<FundRaiser> allFund = (List<FundRaiser>) request.getAttribute("FundraiserList");
 
-					if (allFund != null) {
-						for (FundRaiser raiser : allFund) {
-					%>
-
-					<a
-						href="../fundraiser_page/url_params_fundraiser_page.html?emer_id=<%=raiser.getFundraiserId()%>">
-						<div class="card">
-							<div class="image-splayers">
-								<img
-									src="<%=raiser.getImageUrl()%>"
-									class="player-img">
-							</div>
-							<p class="description"><%=raiser.getTitle()%></p>
-							<div class="name">
-								<div class="publisher-img">
-									<img
-										src="https://freeimghost.net/images/2023/05/22/kohli_img.jpeg">
-								</div>
-								<p class="beneficiary_name">Funding Details</p>
-							</div>
-							<p class="fund-rs">
-								<i class="fa-solid fa-indian-rupee-sign"></i> <span
-									style="font-size: 20px; margin-right: 10px;"><b
-									style="color: #8a8a92;"><span>&#8377</span>0</b></span> <span>raised of</span>
-							<div style="font-size: 20px; margin-left: 5px;">
-								<b style="color: black;"><span>&#8377</span><%=raiser.getFundingGoal()%> </b>
-							</div>
-							</p>
-							<div class="range">
-								<div class="range_value" style="width: 0.04%;"></div>
-							</div>
-							<p class="last-date-of-fund">Last Donation 35 days ago</p>
-							<div class="supports-last-date-of-fund">
-								<p>
-									<span>98</span> Days left
-								</p>
-								<p>
-									<span>45</span> Supporters
-								</p>
-							</div>
+				if (allFund != null) {
+					for (FundRaiser raiser : allFund) {
+				%>
+				
+				
+		
+				<a
+					href="<%=request.getContextPath()%>/PlayerDetailsServlet?emer_id=<%=raiser.getFundraiserId()%>">
+					<div class="card">
+						<div class="image-splayers">
+							<img src="<%=raiser.getImageUrl()%>" class="player-img">
 						</div>
-					</a>
+						<p class="description"><%=raiser.getTitle()%></p>
+						<div class="name">
+							<div class="publisher-img">
+								<img
+									src="https://freeimghost.net/images/2023/05/22/kohli_img.jpeg">
+							</div>
+							<p class="beneficiary_name">Funding Details</p>
+						</div>
+						<p class="fund-rs">
+							<i class="fa-solid fa-indian-rupee-sign"></i> <span
+								style="font-size: 20px; margin-right: 10px;"><b
+								style="color: #8a8a92;"><span>&#8377</span>0</b></span> <span>raised
+								of</span>
+						
+						<div style="font-size: 20px; margin-left: 5px;">
+							<b style="color: black;"><span>&#8377</span><%=raiser.getFundingGoal()%>
+							</b>
+						</div>
+						</p>
+						<div class="range">
+							<div class="range_value" style="width: 0.04%;"></div>
+						</div>
+						<p class="last-date-of-fund">Last Donation 35 days ago</p>
+						<div class="supports-last-date-of-fund">
+							<p>
+								<span>98</span> Days left
+							</p>
+							<p>
+								<span>45</span> Supporters
+							</p>
+						</div>
+					</div>
+				</a>
 
 
-					<%
-					}
-					} else {
-					%>
+				<%
+				}
 
-					<h1>No fundraisers</h1>
-					<%
-					}
-					%>
+				} else {
+				%>
 
+				<h1>No fundraisers</h1>
+				<%
+				}
+					
+					
+				%>
 
 
 			</div>
 		</div>
+
+
 		
-		
-		<script type="text/javascript">
-		
-		console.log("hello");
-		</script>
+
 </body>
 </html>

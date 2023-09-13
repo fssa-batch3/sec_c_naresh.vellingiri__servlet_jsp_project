@@ -78,17 +78,17 @@
 				</div>
 				
 	          
-	          
-	          </form>
-				
-		</div>
-
-		<div class="button">
+	          <div class="button">
 			<button type="submit" id="btn_register">Register</button>
 		</div>
-		<p class="text-center">
+		
+	          </form>
+				<p class="text-center">
 			Already Have an account?<a href="login.jsp">login</a>
 		</p>
+		</div>
+
+		
 	</div>
 	</div>
 

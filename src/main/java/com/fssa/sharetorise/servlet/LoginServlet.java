@@ -7,10 +7,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.fssa.sharetorise.exceptions.DAOException;
 import com.fssa.sharetorise.exceptions.InvalidInputException;
-import com.fssa.sharetorise.exceptions.ServiceException;
+import com.fssa.sharetorise.model.User;
 import com.fssa.sharetorise.service.UserService;
 
 /**
@@ -39,7 +40,8 @@ public class LoginServlet extends HttpServlet {
 		UserService userservice = new UserService();
 		
 		try {
-			userservice.login(useremail, userpassword);
+			User user=userservice.login(useremail, userpassword);
+			
 			response.sendRedirect("FundraiserServlet");
 		}
 		catch(InvalidInputException | DAOException | SQLException e) {
@@ -54,9 +56,7 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-		
+	
 		
 	}
 

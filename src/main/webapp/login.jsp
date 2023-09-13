@@ -21,18 +21,37 @@
     <div class="form">
       <p class="text-center" id="login_form">Login Form</p>
 
-      <form id="form" method = "post" action = "<%=request.getContextPath()%>/LoginServlet">
+      <form id="form" method = "get" action = "<%=request.getContextPath()%>/LoginServlet">
 
         <input type="email" id="email" placeholder="&#xf007;  email" name="useremail">
         <input type="password" id="password" placeholder="&#xf023;  password" name = "password" >
         <i style="color:#17a589 ;" id="password_eye" class="fas fa-eye-slash"></i>
         <br>
         <br>
-        <a href="register.html"> <button>LOGIN</button></a>
+        <a href="./BrowserFundraiser"> <button>LOGIN</button></a>
 
       </form>
 
       <a href="register.html" id="account_creation"><button>Create an account</button> </a>
+
+
+      <script type="text/javascript">
+
+      const password_eye = document.getElementById("password_eye")
+
+      const password = document.getElementById("password")
+
+      password_eye.addEventListener("click", e => {
+
+        const type = password.getAttribute("type") === "password" ? "text" : "password";
+
+        password.setAttribute("type", type);
+
+        const password_slash = password_eye.getAttribute("class") === "fas fa-eye-slash" ? "fas fa-eye" : "fas fa-eye-slash";
+
+        password_eye.setAttribute("class", password_slash)
+
+      })</script>
 
 </body>
 </html>
