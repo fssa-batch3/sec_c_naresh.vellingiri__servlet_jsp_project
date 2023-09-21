@@ -1,5 +1,7 @@
 @charset "ISO-8859-1";
 
+@charset "ISO-8859-1";
+
 
 .header_main{
     position: fixed;
@@ -106,5 +108,4 @@ select{
 .container .display_cer_list .cer_item img {
     width: 175px;
 }
-
 

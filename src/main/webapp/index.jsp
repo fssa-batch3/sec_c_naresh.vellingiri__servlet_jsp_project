@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
+<%@ page import="com.fssa.sharetorise.model.User"%>
 <!DOCTYPE html>
 
 
@@ -8,7 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Github_project_300</title>
+<title>JSP project</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -30,24 +30,10 @@
 
 <body>
 
+
+
 	<!------------------------- Header Section---------------------------------------->
-	<header class="header_main" id="header_main">
-		<a class="logo" href="/"><img
-			src="https://iili.io/J9WhR7R.th.png" alt="logo"></a>
-		<nav>
-			<ul class="nav__links">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="./FundraiserServlet">Fundraiser List</a></li>
-
-			</ul>
-		</nav>
-		<a class="cta" href="register.jsp"
-			id="register">Register</a> 
-			<a class="cta"
-			href="./FundraiserServlet" id="login">Login</a>
-
-	</header>
+<jsp:include page="header.jsp"></jsp:include>
 	<!-- <div id="mobile__menu" class="overlay">
             <a class="close">&times;</a>
             <div class="overlay__content">

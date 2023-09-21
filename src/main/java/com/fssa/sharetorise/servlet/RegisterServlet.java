@@ -2,6 +2,7 @@ package com.fssa.sharetorise.servlet;
 
 import java.io.IOException;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fssa.sharetorise.exceptions.ServiceException;
 import com.fssa.sharetorise.model.User;
-import com.fssa.sharetorise.service.FundraiserService;
 import com.fssa.sharetorise.service.UserService;
 
 
@@ -57,16 +57,24 @@ public class RegisterServlet extends HttpServlet {
     	UserService userService = new UserService(); 
     	
     	try {
+    		
+    		
     		userService.addUser(user);
     		
     		response.sendRedirect(request.getContextPath()+"/login.jsp");
-    		
+    		System.out.println("user registered successfully");
+
     	}
     	catch(ServiceException e) {
     		
+    		request.setAttribute("error", e.getMessage());
+    		
+    		request.getRequestDispatcher("register.jsp").forward(request, response);
+    		
     		System.out.println(e.getMessage());
     		e.printStackTrace();
-    		System.out.println("user registered successfully");
+    		response.sendRedirect(request.getContextPath()+"/register.jsp");
+
     	}
 
         

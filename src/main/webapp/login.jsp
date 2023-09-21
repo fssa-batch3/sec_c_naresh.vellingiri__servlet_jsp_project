@@ -21,7 +21,7 @@
     <div class="form">
       <p class="text-center" id="login_form">Login Form</p>
 
-      <form id="form" method = "get" action = "<%=request.getContextPath()%>/LoginServlet">
+      <form id="form" method = "post" action = "<%=request.getContextPath()%>/LoginServlet">
 
         <input type="email" id="email" placeholder="&#xf007;  email" name="useremail">
         <input type="password" id="password" placeholder="&#xf023;  password" name = "password" >
@@ -32,7 +32,7 @@
 
       </form>
 
-      <a href="register.html" id="account_creation"><button>Create an account</button> </a>
+      <a href="register.jsp" id="account_creation"><button>Create an account</button> </a>
 
 
       <script type="text/javascript">

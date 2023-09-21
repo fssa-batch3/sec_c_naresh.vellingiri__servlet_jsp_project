@@ -52,7 +52,6 @@
 		<nav>
 			<ul class="nav__links">
 				<li><a href="../../index.html">Home</a></li>
-				<li><a href="#">About</a></li>
 				<li><a href="../fundraiser_page/browse_fundraiser.html">Fundraiser</a></li>
 
 			</ul>

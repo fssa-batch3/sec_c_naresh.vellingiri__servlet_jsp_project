@@ -46,6 +46,24 @@
   	<description></description>
   	<servlet-class>com.fssa.sharetorise.servlet.PlayerDetailsServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>profileServlet</servlet-name>
+  	<display-name>profileServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.fssa.sharetorise.servlet.profileServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<display-name>LogoutServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.fssa.sharetorise.servlet.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DonateFund</servlet-name>
+  	<display-name>DonateFund</display-name>
+  	<description></description>
+  	<servlet-class>com.fssa.sharetorise.servlet.DonateFund</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>FundraiserServlet</servlet-name>
   	<url-pattern>/FundraiserServlet</url-pattern>
@@ -73,5 +91,17 @@
   <servlet-mapping>
   	<servlet-name>PlayerDetailsServlet</servlet-name>
   	<url-pattern>/PlayerDetailsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>profileServlet</servlet-name>
+  	<url-pattern>/profileServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<url-pattern>/LogoutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DonateFund</servlet-name>
+  	<url-pattern>/DonateFund</url-pattern>
   </servlet-mapping>
 </web-app>

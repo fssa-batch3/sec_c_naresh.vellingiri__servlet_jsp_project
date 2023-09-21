@@ -23,6 +23,18 @@
 <body>
 
 	<div class="container">
+	
+	<%
+		String error = (String) request.getAttribute("error");
+	
+	if(error!=null){
+		%>
+		<h1 id="already_email_available"><%=error%></h1>
+<%
+	}
+	%>
+	
+	
 
 		<div class="title">Registration</div>
 

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.fssa.sharetorise.dao.DonateFundDao;
 import com.fssa.sharetorise.exceptions.DAOException;
 import com.fssa.sharetorise.model.FundRaiser;
 import com.fssa.sharetorise.service.FundraiserService;
@@ -20,11 +21,12 @@ public class PlayerDetailsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		int id = Integer.parseInt(request.getParameter("emer_id"));
-
 		
-		
+		DonateFundDao donateFundDao = new DonateFundDao();
 		FundraiserService fundraiserService = new FundraiserService();
-
+		
+		double raisedAmount = donateFundDao.getFundRaisedAmountById(id);
+		//dpible goal =
 		
 		try {
 	        // Use the FundraiserService to get the Fundraiser by ID
@@ -33,7 +35,10 @@ public class PlayerDetailsServlet extends HttpServlet {
 	        if (fundraiser != null) {
 	            // Set the Fundraiser object as an attribute in the request scope
 	            request.setAttribute("fundraiser", fundraiser);
-	
+	            request.setAttribute("raisedAmount", raisedAmount);
+	            
+	            //setv the goal amount
+	            request.setAttribute("emer_id", id);
 	            System.out.println(fundraiser);
 	            
 	            request.getRequestDispatcher("/UrlParamsFundrasierPage.jsp").forward(request, response);

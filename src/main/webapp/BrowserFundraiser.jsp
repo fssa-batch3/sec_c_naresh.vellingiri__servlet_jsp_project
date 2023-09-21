@@ -1,9 +1,12 @@
+<%@page import="com.fssa.sharetorise.logger.Logger"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
 <%@ page import="java.util.*"%>
+<%@ page import="java.io.*"%>
 <%@ page import="com.fssa.sharetorise.model.FundRaiser"%>
 <%@ page import="com.fssa.sharetorise.model.User"%>
+<%@ page import="com.fssa.sharetorise.logger.Logger"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,24 +23,9 @@
 </head>
 <body>
 
+	<!-- Header Part -->
+	<jsp:include page="header.jsp"></jsp:include>
 
-	<!------------------------- Header Section---------------------------------------->
-	<header class="header_main" id="header_main">
-		<a class="logo" href="/"><img
-			src="../../assets/images/index_images/logo_main.png" alt="logo"></a>
-		<nav>
-			<ul class="nav__links">
-				<li><a href="./index.jsp">Home</a></li>
-				<li><a href="#">About</a></li>
-				<li><li><a href="./FundraiserServlet">Fundraiser List</a></li>
-
-
-
-			</ul>
-		</nav>
-		
-
-	</header>
 
 	<!------------------------- Fundraiser Section---------------------------------------->
 
@@ -79,10 +67,23 @@
 			</div>
 
 
+			<%
+			User obj = (User) session.getAttribute("obj");
 
+			if (obj != null) {
+			%>
 			<button id="btn">
-				<a href="./AddFundraiser.jsp">Start a fund raiser</a>
+			<a href="./AddFundraiser.jsp">Start a fund raiser</a>
+</button>
+			<%
+			} else {
+			%>
+			<button id="btn">
+			<a href="./register.jsp">Register to Start</a>
 			</button>
+			<%
+			}
+			%>
 		</div>
 
 		<div class="card-fundraisers">
@@ -120,21 +121,21 @@
 
 
 				<%
+				PrintWriter outer = response.getWriter();
 				List<FundRaiser> allFund = (List<FundRaiser>) request.getAttribute("FundraiserList");
 
 				if (allFund != null) {
 					for (FundRaiser raiser : allFund) {
 				%>
-				
-				
-		
+
 				<a
 					href="<%=request.getContextPath()%>/PlayerDetailsServlet?emer_id=<%=raiser.getFundraiserId()%>">
 					<div class="card">
+
 						<div class="image-splayers">
 							<img src="<%=raiser.getImageUrl()%>" class="player-img">
 						</div>
-						<p class="description"><%=raiser.getTitle()%></p>
+						<p class="description"><%=raiser.getFundraiserId()%></p>
 						<div class="name">
 							<div class="publisher-img">
 								<img
@@ -147,7 +148,6 @@
 								style="font-size: 20px; margin-right: 10px;"><b
 								style="color: #8a8a92;"><span>&#8377</span>0</b></span> <span>raised
 								of</span>
-						
 						<div style="font-size: 20px; margin-left: 5px;">
 							<b style="color: black;"><span>&#8377</span><%=raiser.getFundingGoal()%>
 							</b>
@@ -178,16 +178,10 @@
 				<h1>No fundraisers</h1>
 				<%
 				}
-					
-					
 				%>
 
 
 			</div>
 		</div>
-
-
-		
-
 </body>
 </html>
