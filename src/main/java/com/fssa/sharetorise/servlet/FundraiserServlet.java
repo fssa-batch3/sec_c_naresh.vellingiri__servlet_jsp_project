@@ -35,8 +35,7 @@ public class FundraiserServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-//		HttpSession session = request.getSession();
-//		System.out.println(session.getAttribute("currentUser"));
+
 		HttpSession session = request.getSession();
 		User user  = (User) session.getAttribute("obj");
 		List<FundRaiser> allFund = service.readAllFundraiser();

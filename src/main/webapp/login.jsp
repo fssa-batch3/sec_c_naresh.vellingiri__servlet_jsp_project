@@ -23,9 +23,9 @@
 
       <form id="form" method = "post" action = "<%=request.getContextPath()%>/LoginServlet">
 
-        <input type="email" id="email" placeholder="&#xf007;  email" name="useremail">
-        <input type="password" id="password" placeholder="&#xf023;  password" name = "password" >
-        <i style="color:#17a589 ;" id="password_eye" class="fas fa-eye-slash"></i>
+        <input type="email" id="email" placeholder="&#xf007;  email" value="naresh@gmail.com" name="useremail">
+        <input type="password" id="password" placeholder="&#xf023;  password" value="Naresh@2000" name = "password" >
+        <i style="color:#17a589 ; id="password_eye" class="fas fa-eye-slash"></i>
         <br>
         <br>
         <a href="./BrowserFundraiser"> <button>LOGIN</button></a>

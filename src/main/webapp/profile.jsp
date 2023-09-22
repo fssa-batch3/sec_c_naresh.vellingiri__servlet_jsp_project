@@ -64,7 +64,7 @@
             </a>
           </li>
           <li>
-            <a href="../profile/your_fundraiser_page.html">
+            <a href="yourFundraiser.jsp">
               <span class="las la-clipboard-list"></span>
               <small>FUNDRAISERS</small>
             </a>

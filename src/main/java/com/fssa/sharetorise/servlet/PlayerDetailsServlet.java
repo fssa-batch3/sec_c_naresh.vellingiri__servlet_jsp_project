@@ -39,7 +39,6 @@ public class PlayerDetailsServlet extends HttpServlet {
 	            
 	            //setv the goal amount
 	            request.setAttribute("emer_id", id);
-	            System.out.println(fundraiser);
 	            
 	            request.getRequestDispatcher("/UrlParamsFundrasierPage.jsp").forward(request, response);
 	        }

@@ -23,18 +23,17 @@
 <body>
 
 	<div class="container">
-	
-	<%
+
+		<%
 		String error = (String) request.getAttribute("error");
-	
-	if(error!=null){
+
+		if (error != null) {
 		%>
 		<h1 id="already_email_available"><%=error%></h1>
-<%
-	}
-	%>
-	
-	
+		<%
+		}
+		%>
+
 
 		<div class="title">Registration</div>
 
@@ -88,19 +87,19 @@
 							pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required>
 					</div>
 				</div>
-				
-	          
-	          <div class="button">
-			<button type="submit" id="btn_register">Register</button>
-		</div>
-		
-	          </form>
-				<p class="text-center">
-			Already Have an account?<a href="login.jsp">login</a>
-		</p>
+
+
+				<div class="button">
+					<button type="submit" id="btn_register">Register</button>
+				</div>
+
+			</form>
+			<p class="text-center">
+				Already Have an account?<a href="login.jsp">login</a>
+			</p>
 		</div>
 
-		
+
 	</div>
 	</div>
 

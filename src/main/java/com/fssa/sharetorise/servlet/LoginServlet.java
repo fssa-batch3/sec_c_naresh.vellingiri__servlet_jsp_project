@@ -43,14 +43,10 @@ public class LoginServlet extends HttpServlet {
 		
 		try {
 			
-			User user=userservice.login(useremail, userpassword);
+			User user = userservice.login(useremail, userpassword);
 			
 			HttpSession session = request.getSession();
-			 session.setAttribute("obj",user);
-			 
-			 Logger.info(user);
-			
-			
+			session.setAttribute("obj",user);
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		}
 		catch(InvalidInputException | DAOException | SQLException e) {

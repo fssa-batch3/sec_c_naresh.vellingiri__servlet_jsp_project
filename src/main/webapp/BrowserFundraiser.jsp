@@ -73,13 +73,13 @@
 			if (obj != null) {
 			%>
 			<button id="btn">
-			<a href="./AddFundraiser.jsp">Start a fund raiser</a>
-</button>
+				<a href="./AddFundraiser.jsp">Start a fund raiser</a>
+			</button>
 			<%
 			} else {
 			%>
 			<button id="btn">
-			<a href="./register.jsp">Register to Start</a>
+				<a href="./register.jsp">Register to Start</a>
 			</button>
 			<%
 			}

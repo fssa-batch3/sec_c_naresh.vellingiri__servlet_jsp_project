@@ -19,17 +19,17 @@
 
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/assets/css/index.css">
-
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/FundraiserPage/form_creation_fundraiser.css">
-
+	<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/assets/css/Profile/profile_all_style.css">
 
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/assets/css/FundraiserPage/BrowserFundraiser.css">
+
+
+
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/assets/css/Profile/your_fundraiser.css">
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/assets/css/Profile/profile_all_style.css">
+
 
 
 
@@ -46,21 +46,8 @@
 	<a href=""></a>
 
 
-	<header class="header_main" id="header_main">
-		<a class="logo" href="/"><img
-			src="../../assets/images/index_images/logo_main.png" alt="logo"></a>
-		<nav>
-			<ul class="nav__links">
-				<li><a href="../../index.html">Home</a></li>
-				<li><a href="../fundraiser_page/browse_fundraiser.html">Fundraiser</a></li>
-
-			</ul>
-		</nav>
-		<a class="cta" href="../login and register/register.html"
-			id="register">Register</a> <a class="cta"
-			href="../login and register/login.html" id="login">Login</a>
-
-	</header>
+<!-- Header Part -->
+	<jsp:include page="header.jsp"></jsp:include>
 
 
 	<div class="sidebar">
@@ -83,7 +70,7 @@
 					</a></li>
 					<li><a href="#"> <span class="las la-envelope"></span> <small>DONATIONS</small>
 					</a></li>
-					<li><a href="#" class="active"> <span
+					<li><a href="yourFundraiser.jsp" class="active"> <span
 							class="las la-clipboard-list"></span> <small>FUNDRAISERS</small>
 					</a></li>
 

@@ -33,7 +33,7 @@
 
 
 	<!------------------------- Header Section---------------------------------------->
-<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="header.jsp"></jsp:include>
 	<!-- <div id="mobile__menu" class="overlay">
             <a class="close">&times;</a>
             <div class="overlay__content">
@@ -63,8 +63,7 @@
 			</div>
 
 			<div class="funding_news">
-				<img src="https://iili.io/J9WwLga.th.png"
-					alt="image broken">
+				<img src="https://iili.io/J9WwLga.th.png" alt="image broken">
 				<h1>Cricket Association of India raised ₹ 32,34,976 for Women's
 					Cricket Team in just 10 days.</h1>
 			</div>
@@ -311,8 +310,7 @@
 				</div>
 				<div last class="followers">
 					<h2 class="mb-0">1.5 M+</h2>
-					<br> <span last>Followers</span><br>
-					<br>
+					<br> <span last>Followers</span><br> <br>
 				</div>
 				<div last class="reach-out">
 					<b> For any queries </b><br> <b>Email: info@s2r.org</b><br>

@@ -29,14 +29,13 @@ public class DonateFund extends HttpServlet {
 		if (user != null) {
 
 			try {
-				UserDAO userDao = new UserDAO();
 
-				User userDetails = userDao.getUserDetailsEmailId(user.getEmail());
+				if (fundraiserService.donateFundint(amount, user.getUserId(), fundRaiserId)) {
+					System.out.println("Donated Successfull");
+				} else {
+					System.out.println("Donated failed");
+				}
 
-				int userId = userDetails.getUserId();
-
-				fundraiserService.donateFundint( amount,fundRaiserId, userId);
-				System.out.println("Donated Successful");
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 				e.printStackTrace();
@@ -45,7 +44,7 @@ public class DonateFund extends HttpServlet {
 			response.sendRedirect("./PlayerDetailsServlet?emer_id=" + fundRaiserId);
 
 		} else {
-			System.out.println("login first  user :"+user);
+			System.out.println("login first  user :" + user);
 			request.setAttribute("error", "Login/ session timeout");
 			RequestDispatcher rd = request.getRequestDispatcher("./login.jsp");
 			rd.forward(request, response);

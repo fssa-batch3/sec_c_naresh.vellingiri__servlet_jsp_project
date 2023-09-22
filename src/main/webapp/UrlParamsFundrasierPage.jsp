@@ -447,8 +447,6 @@ input::-webkit-inner-spin-button {
 	double raisedAmount = (Double) (request.getAttribute("raisedAmount"));
 	//double
 	boolean isArrived = fundraiser != null ? true : false;
-	System.out.println("hiii" + isArrived);
-	System.out.println("hiii" + id);
 	%>
 
 
